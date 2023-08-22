@@ -31,8 +31,20 @@ function Gallery(element) {
 
 //proto
 Gallery.prototype.openModal = function (selected, list) {
-  console.log(selected, list);
+  this.setMainImage(selected);
+  this.modalImages.innerHTML = list
+    .map(function (image) {
+      return `<img src="${
+        image.src
+      }" data-id="${image.dataset.id}" title="${image.title}" alt="${image.alt}" class="${selected.dataset.id === image.dataset.id ? 'modal-img selected' : 'modal-img'}"/>`;
+    })
+    .join('');
   this.modal.classList.add('open');
+  console.log(this);
+};
+
+Gallery.prototype.setMainImage = function (selected) {
+  this.mainImage.src = selected.src;
 };
 
 //instances
