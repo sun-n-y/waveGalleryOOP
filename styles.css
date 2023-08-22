@@ -91,9 +91,9 @@
 }
 
 .modal-image-container {
-    width: 80vw;
+    width: 70vw;
     height: 20rem;
-    margin: 8rem auto;
+    margin: 4rem auto;
     position: relative;
 }
 
@@ -112,9 +112,9 @@
 }
 
 .modal-images {
-    margin: 4rem 8rem;
+    margin: 2rem 2rem;
     display: grid;
-    grid-template-columns: repeat(5, 100px);
+    grid-template-columns: repeat(5, 70px);
 }
 
 .modal-img {
@@ -132,4 +132,26 @@
 
 .selected {
     opacity: 1;
+}
+
+@media screen and (min-width:600px) {
+    .modal-images {
+        margin: 2rem 6rem;
+        grid-template-columns: repeat(5, 100px);
+    }
+
+    .modal-image-container {
+        height: 32rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .modal-images {
+        margin: 2rem 8rem;
+        grid-template-columns: repeat(5, 100px);
+    }
+
+    .modal-image-container {
+        height: 40rem;
+    }
 }
